@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenitore {
+    background-color: powderblue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#griglia {
+    background-color: black;
+}
+
+.quadratino {
+    float:left;
+    margin: 1px;
+    background-color: white;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}
