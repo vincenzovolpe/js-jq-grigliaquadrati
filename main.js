@@ -32,20 +32,27 @@ $(document).ready(function(){
               indicirossi.push(indicegenerato);
           }
       }
-  }
+    }
     // Funzione per la generazione dei quadratini
     function creaQuadratini(altezzaGriglia, righeGriglia) {
       // Calcolo il totale dei qudratini della griglia
       var totaleQuadratini = righeGriglia * righeGriglia;
+      // Calcolo l'altezza del quadratino
       var altezzaQuadratino = (altezzaGriglia / righeGriglia) - margini;
+      // Calcolo la larghezza del quadratino
       var larghezzaQuadratino = (altezzaGriglia / righeGriglia) - margini;
+      // Imposto la larghezza della griglia
       $("#griglia").width(altezzaGriglia);
+      // Imposto l'altezza della griglia
       $("#griglia").height(altezzaGriglia);
       // Creo la griglia con un ciclo for che crea tanti qudratini in html in base alla dimensione della griglia data dalla variabile totaleQuadratini
       for (j = 0; j < totaleQuadratini; j++) {
+          // Aggiungo il quadratino alla griglia
           $("<div class='quadratino'></div>").appendTo($("#griglia"));
       }
+      // Imposto la larghezza del quadratino
       $(".quadratino").width(altezzaQuadratino);
+      // Imposto l'altezza del quadratino
       $(".quadratino").height(larghezzaQuadratino);
   }
     // Funzione per calcolare gli indici casuali dei quadratini che diventeranno rossi
