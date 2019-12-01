@@ -1,16 +1,19 @@
 // Dichiarazione variabili
 var indicirossi = []; // Array che includerà gli indici dei quadratini che diventeranno rossi
 var maxQuadratiniRossi = 15; // Numero massimo di qudratini rossi della griglia
-var larghezzaGriglia = '30%'; // Larghezza della griglia in percentuale
+var larghezzaGriglia = '40%'; // Larghezza della griglia in percentuale
 var righeGriglia = 8; // Quadratini per ogni riga
-var minIndiceRossi = 0;
+var minIndiceRossi = 1;
 var maxIndiceRossi = (righeGriglia * righeGriglia) - 1; // Numero totale quadratini della griglia
+var maxQuadratiniVerdi = maxIndiceRossi - maxQuadratiniRossi + 1;
 var margini = '2px'; // Margine sinistro + margine destro in px dei quadratini
-
+var contarossi = 0; // Variabile che memorizza i quadratini rossi scoperti
+var contaverdi = 0;// Variabile che memorizza i quadratini verdi scoperti
 // Document Ready
 $(document).ready(function(){
     // Chiamiamo la funzione per la generazione degli indici dei quadratini rossi
     creaIndiciRossi();
+    console.log(indicirossi);
     // Chiamiamo la funzione per la creazione della Griglia
     creaGriglia(larghezzaGriglia, righeGriglia);
     // Evento click di un quadratino (per colorarlo verde o rosso)
@@ -19,9 +22,17 @@ $(document).ready(function(){
     if (indicirossi.includes($(this).index())){
         // L'indice del quadratino cliccato è contenuto nell'array degli indici rossi, quindi gli assegno la classe red
         $(this).addClass("red");
+        contarossi++;
+        if (contarossi == maxQuadratiniRossi) {
+            alert('Hai perso');
+        }
     } else {
         // L'indice del quadratino cliccato non è contenuto nell'array degli indici rossi, quindi gli assegno la classe green
         $(this).addClass("green");
+        contaverdi++;
+        if (contaverdi == maxQuadratiniVerdi) {
+            alert('Complimenti! Hai vinto la battaglia');
+        }
     }
   });
 });

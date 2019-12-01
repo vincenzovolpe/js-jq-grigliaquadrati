@@ -8,18 +8,34 @@ body {
     background-color: powderblue;
 }
 
+h1 {
+    font-size: 1.66vw;
+    color: blue;
+}
+
+h2 {
+    font-size: 1.25vw;
+    color: orangered;
+}
+
+.titolo  {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .contenitore {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: black;
+    text-align: center;
 }
 
 .quadratino {
     float:left;
     margin: 1px;
     background-color: white;
+    border: 1px solid black;
 }
 .red {
     background-color: red;
