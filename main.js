@@ -23,14 +23,14 @@ $(document).ready(function(){
         // L'indice del quadratino cliccato è contenuto nell'array degli indici rossi, quindi gli assegno la classe red
         $(this).addClass("red");
         contarossi++;
-        if (contarossi == maxQuadratiniRossi) {
+        if (contarossi == maxQuadratiniRossi && (contaverdi != maxQuadratiniVerdi)) {
             alert('Hai perso');
         }
     } else {
         // L'indice del quadratino cliccato non è contenuto nell'array degli indici rossi, quindi gli assegno la classe green
         $(this).addClass("green");
         contaverdi++;
-        if (contaverdi == maxQuadratiniVerdi) {
+        if ((contaverdi == maxQuadratiniVerdi) && (contarossi !== maxQuadratiniRossi)) {
             alert('Complimenti! Hai vinto la battaglia');
         }
     }
