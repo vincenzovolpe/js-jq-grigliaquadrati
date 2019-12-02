@@ -44,7 +44,7 @@ $(window).resize(function() {
 
 // Funzione che crea gli indici dei quadratini che diventeranno rossi
 function creaIndiciRossi() {
-  for (i = 0; indicirossi.length < maxQuadratiniRossi; i++){
+  do {
       var indicegenerato = indiciRandom(minIndiceRossi, maxIndiceRossi);
       // Prima di inserire nell'array degli indici l'indice generato con la funzione indiciRandom mi assicuro che non esista già nell'array
       var esiste = indicirossi.includes(indicegenerato);
@@ -52,6 +52,8 @@ function creaIndiciRossi() {
           // Se l'indice generato non esiste lo aggiungo all'array degli indici
           indicirossi.push(indicegenerato);
       }
+  } while (indicirossi.length < maxQuadratiniRossi) {
+
   }
 }
 // Funzione per la generazione dei quadratini
